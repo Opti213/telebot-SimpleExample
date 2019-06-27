@@ -2,12 +2,17 @@ import telebot
 import requests
 
 #enter your own token
-bot = telebot.TeleBot('Token')
+bot = telebot.TeleBot('880750397:AAEJs4lqzwjjyuTR1RUVVMdjkVQXwCZpO98')
+
+
+#buttons
+keyboard = telebot.types.ReplyKeyboardMarkup()
+keyboard.row('hello', 'joke')
 
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Hello, i\'m Viki')
+    bot.send_message(message.chat.id, 'Hello, i\'m Viki', reply_markup=keyboard)
 
 @bot.message_handler(commands=['help'])
 def start_message(message):
